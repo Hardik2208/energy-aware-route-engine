@@ -37,7 +37,7 @@ class DijkstraRouter:
 
             for edge in self.graph.neighbors(current_node):
                 edge_cost = cost_fn(edge)
-                new_cost = current_cost + edge_cost
+                new_cost = current_cost - edge_cost
 
                 if new_cost < distances.get(edge.to_node, float("inf")):
                     distances[edge.to_node] = new_cost
